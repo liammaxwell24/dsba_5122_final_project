@@ -41,7 +41,7 @@ with tab1:
 with tab2:
     st.sidebar.header("Pick a player attribute for your bar chart")
     z_val = st.sidebar.selectbox("Pick your attribute",contract_data.select_dtypes(include=np.number).drop(['signed','extended','age at signing/extension','offseason_of_new_contract'], axis=1).columns.tolist())
-    count_input = st.sidebar.number_input(f"Enter a value for the number of top {z_val} values to display", min_value=1, max_value=len(contract_data), value=40, step=1)
+    count_input = st.sidebar.number_input(f"Enter a value for the number of top {z_val} values to display", min_value=1, max_value=len(contract_data), value=10, step=1)
 
     bar = alt.Chart(contract_data.nlargest(count_input, z_val)).mark_bar().encode(y = alt.Y('name',title='name', sort = '-x'),
     x = alt.X(z_val,title=f'{z_val}'), tooltip=['name',z_val,'new_contract_AAV']).transform_window(
