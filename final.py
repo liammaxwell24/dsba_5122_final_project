@@ -20,7 +20,7 @@ tab1, tab2 = st.tabs(['Scatter Plot', 'Bar Chart'])
 
 
 with tab1:
-    player = st.multiselect('Select a NBA players to compare', contract_data['name'])
+    player = st.multiselect('Select NBA players to compare', contract_data['name'])
     filtered_contract_data = contract_data[contract_data['name'].isin(player)]
 
 
