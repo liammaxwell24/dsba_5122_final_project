@@ -4,7 +4,7 @@ import altair as alt
 import numpy as np
 
 
-contract_data = pd.read_csv('DSBA 5122_NBA Contracts Data_v5.csv')
+contract_data = pd.read_csv('DSBA 5122_NBA Contracts Data_v4.csv')
 
 contract_data.drop(['signed','extended'],axis=1)
 
